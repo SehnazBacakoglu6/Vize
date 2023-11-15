@@ -44,3 +44,12 @@ test_that("maps data.frame'inin 5. sütununun adını kontrol et", {
   expect_false("Title" %in% names(maps), 
                info = "maps data.frame'inin 5. sütununun adında 'Title' kelimesi geçmiyor mu?")
 })
+#2.9
+test_that("Latitude sütunu numeric değerlerden oluşmalıdır", {
+  
+  expect_true(all(suppressWarnings(!is.na(as.numeric(maps$Latitude)))),
+              info = "Latitude sütunu numeric değerlerden oluşmalıdır")
+})
+  
+
+
