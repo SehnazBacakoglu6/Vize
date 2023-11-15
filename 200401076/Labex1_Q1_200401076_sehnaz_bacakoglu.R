@@ -7,6 +7,7 @@
 #yeni branch oluşturduktan sonra sırsaıyla git add ./git commit -m "mesaj" ve git push -u origin(branch name ) ile branch e yazdığımız kodu ekler ve push ederiz
 
 library(dplyr)
+library(ggplot2)
 #1.1
 url <- "https://raw.githubusercontent.com/scizmeli/Red/master/MapsThatChangedOurWorld_StoryMap_Data.csv"#url adında değişken oluşturduk ve bu değişkene csv dosyasının linkini atadık.
 download.file(url, destfile = "MapsThatChangedOurWorld_StoryMap_Data.csv", mode = "wb") #dowland ettik(destfile ismini öyle verdik çünkü task de öyle yazıyor)
@@ -40,6 +41,10 @@ maps <- maps %>%
   )
 
 
+#1.8 
+ggplot(maps, aes(x = as.numeric(gsub("AD", "", Year)))) +
+  geom_histogram(binwidth = 10, fill = "skyblue", color = "black") +
+  labs(title = "Histogram of Years", x = "Year", y = "Frequency")
 
 
 
