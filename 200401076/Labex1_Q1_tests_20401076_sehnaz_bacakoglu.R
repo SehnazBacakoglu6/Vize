@@ -63,4 +63,10 @@ test_that("idx nesnesi Global Workspace'de mevcut olmalıdır", {
   expect_true(exists("idx", envir = globalenv()), 
               info = "idx nesnesinin var olduğunu kontrol etme")
 })
+#2.12
+test_that("idx nesnesinin tipi integer'dir", {
+ 
+  expect_identical(class(idx), "integer", 
+                   info = "idx nesnesinin tipinin integer olduğunu kontrol etme")
+})
 
