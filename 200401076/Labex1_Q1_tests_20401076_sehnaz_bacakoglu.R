@@ -32,3 +32,9 @@ test_that("maps değişkeninin data.frame olup olmadığını kontrol et", {
   
   expect_true(is.data.frame(maps), info = "maps değişkeninin bir data.frame olduğunu kontrol etme")
 })
+#2.7
+test_that("maps data.frame'inin ilk sütununun adını kontrol et", {
+
+
+  expect_equal(names(maps)[1], "City", info = "maps data.frame'inin ilk sütununun adını kontrol etme")
+})
