@@ -70,3 +70,10 @@ test_that("idx nesnesinin tipi integer'dir", {
                    info = "idx nesnesinin tipinin integer olduğunu kontrol etme")
 })
 
+#2.13
+test_that("Year sütunu numeric değerlerden oluşmalıdır", {
+
+  expect_true(all(suppressWarnings(!is.na(as.numeric(maps$Year)))),
+              info = "Year sütunu numeric değerlerden oluşmalıdır")
+})
+
