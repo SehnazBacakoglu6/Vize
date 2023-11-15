@@ -51,5 +51,10 @@ test_that("Latitude sütunu numeric değerlerden oluşmalıdır", {
               info = "Latitude sütunu numeric değerlerden oluşmalıdır")
 })
   
+#2.10
+test_that("Longitude sütunu numeric değerlerden oluşmalıdır", {
 
+  expect_true(all(suppressWarnings(!is.na(as.numeric(maps$Longitude)))),
+              info = "Longitude sütunu numeric değerlerden oluşmalıdır")
+})
 

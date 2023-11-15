@@ -31,7 +31,13 @@ maps <- maps %>%
 #1.6 
 maps <- maps %>%
   mutate(Year = as.numeric(gsub("AD", "", Year)))
-print(maps)
+
+#1.7 
+maps <- maps %>%
+  mutate(
+    Longitude = as.numeric(gsub("[^0-9.-]", "", Longitude)),
+    Latitude = as.numeric(gsub("[^0-9.-]", "", Latitude))
+  )
 
 
 
